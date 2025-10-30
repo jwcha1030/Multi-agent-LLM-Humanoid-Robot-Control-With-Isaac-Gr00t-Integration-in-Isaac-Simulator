@@ -12,8 +12,8 @@ from gr00t.model.policy import Gr00tPolicy
 from gr00t.experiment.data_config import DATA_CONFIG_MAP
 
 # Gr00t initialize
-#MODEL_PATH = "nvidia/GR00T-N1.5-3B"
-MODEL_PATH = "./finetuned/gr1_arms_only.Nut_pouring_batch32_nodiffusion/"
+MODEL_PATH = "nvidia/GR00T-N1.5-3B"
+# MODEL_PATH = "./finetuned/gr1_arms_only.Nut_pouring_batch32_nodiffusion/"
 EMBODIMENT_TAG = "gr1"
 EMBODIMENT_CONFIG = "fourier_gr1_arms_only"
 
