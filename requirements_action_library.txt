@@ -1,0 +1,13 @@
+# Additional dependencies for Action Library System
+# Install with: pip install -r requirements_action_library.txt
+
+# Keyboard event handling for action recording
+pynput>=1.7.6
+
+# LLM integration (optional - only if you want to use LLM planning)
+openai>=1.0.0  # For GPT-4 / GPT-4o integration
+
+# Already should be installed from main project:
+# numpy
+# opencv-python (cv2)
+# requests

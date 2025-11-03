@@ -1,0 +1,25 @@
+# Additional requirements for Multi-Agent LLM System
+# Install with: pip install -r requirements_multiagent.txt
+
+# Multi-agent frameworks
+crewai>=0.41.0
+crewai-tools>=0.4.0
+
+# LangChain for RAG and tools
+langchain>=0.1.0
+langchain-community>=0.0.20
+langchain-openai>=0.0.5
+
+# OpenAI API
+openai>=1.0.0
+
+# Environment variables
+python-dotenv>=1.0.0
+
+# Image processing for vision analysis
+pillow>=10.0.0
+
+# Already should be installed:
+# numpy
+# opencv-python
+# pynput

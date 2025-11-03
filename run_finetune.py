@@ -13,21 +13,23 @@ from gr00t.experiment.runner import TrainRunner
 
 
 PRE_TRAINED_MODEL_PATH = "nvidia/GR00T-N1.5-3B"
+# PRE_TRAINED_MODEL_PATH = "./finetuned/gr1_arms_only.Nut_pouring_task_batch32_nodiffusion"
 EMBODIMENT_TAG = EmbodimentTag.GR1
 EMBODIMENT_CONFIG = "fourier_gr1_arms_only"
 TUNE_LLM = False            
 TUNE_VISUAL = False          
 TUNE_PROJECTOR = True # whether to tune projector model
 TUNE_DIFFUSION_MODEL = False # whether to tune diffusion model
-DATASET_PATH = "./datasets/gr1_arms_only.Exhaust_pipe_sort_task"
+DATASET_PATH = "./datasets/Exhaust-Pipe-Sorting-task"
+# DATASET_PATH = "./datasets/Nut-Pouring-task"
 DATASET_VIDEO_BACKEND = "decord" # torchvision_av #this is important!
 MODEL_COMPUTE_DTYPE = "bfloat16"
-FINETUNED_OUTPUT_DIRECTORY = "./finetuned/gr1_arms_only.Exhaust_pipe_sort_batch32_nodiffusion"
+FINETUNED_OUTPUT_DIRECTORY = "./finetuned/gr1_arms_only.Nut_pouring_Exhaust_pipe_sorting_batch32_nodiffusion"
 BATCH_SIZE = 32
-MAX_STEPS = 40000
+MAX_STEPS = 30000 #originally 40000
 SAVE_STEPS = 10000 # save the model in this steps
 GRADIENT_ACCUMULATION_STEPS = 1
-RUN_NAME = "gr1_arms_only.Exhaust_pipe_sort_batch32_nodiffusion" # for reporting to wandb
+RUN_NAME = "gr1_arms_only.Nut_pouring_Exhaust_pipe_sorting_batch32_nodiffusion" # for reporting to wandb
 LEARNING_RATE = 1e-4
 
 
@@ -78,8 +80,9 @@ def main():
         tf32=True,
         per_device_train_batch_size=BATCH_SIZE,
         gradient_accumulation_steps=GRADIENT_ACCUMULATION_STEPS,
-        dataloader_num_workers=16,
+        dataloader_num_workers=12,  # Reduced from 16 to match official (more stable)
         dataloader_pin_memory=False,
+        dataloader_prefetch_factor=4,  # Added: improves data loading performance
         dataloader_persistent_workers=True,
         optim="adamw_torch",
         adam_beta1=0.95,
@@ -94,7 +97,7 @@ def main():
         max_steps=MAX_STEPS,
         save_strategy="steps",
         save_steps=SAVE_STEPS,
-        save_total_limit=8,
+        save_total_limit=5,  # Reduced from 8 to save disk space (keeps last 5 checkpoints)
         report_to="wandb",
         seed=42,
         do_eval=False,
