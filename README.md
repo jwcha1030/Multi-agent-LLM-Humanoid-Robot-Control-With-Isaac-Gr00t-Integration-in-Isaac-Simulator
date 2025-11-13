@@ -104,7 +104,7 @@ alias isaac-py="/path/to/isaac-sim/python.sh"
 ```bash
 # Activate Isaac Sim environment
 conda activate isaacsim
-cd /path/to/isaac-sim-with-groot-tutorial
+cd /path/to/multi_agent_llm_humanoid_manipulation
 
 # Install multi-agent dependencies (replace isaac-py with your Isaac Sim Python path)
 /path/to/isaac-sim/python.sh -m pip install crewai langchain-openai python-dotenv pillow opencv-python
@@ -120,7 +120,7 @@ Download a pre-trained task dataset from HuggingFace:
 ```bash
 # Switch to gr00t environment
 conda activate gr00t
-cd /path/to/isaac-sim-with-groot-tutorial
+cd /path/to/multi_agent_llm_humanoid_manipulation
 
 # Edit download_dataset.py to select dataset
 # Options: "Nut-Pouring-task" or "Exhaust-Pipe-Sorting-task"
