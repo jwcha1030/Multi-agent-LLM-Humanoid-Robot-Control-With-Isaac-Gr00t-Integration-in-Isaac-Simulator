@@ -392,14 +392,6 @@ curl -X POST http://localhost:9876/inference \
   -d '{"task": "test", "obs": [], "state": {}}'
 ```
 
-## Additional Documentation
-
-- **`MULTIAGENT_SETUP.md`**: Comprehensive multi-agent system setup guide
-- **`MULTIAGENT_README.md`**: Detailed system architecture and features
-- **`MULTIAGENT_QUICK_REF.md`**: Quick reference card for common operations
-- **`VISION_PLANNING_NOTES.md`**: Vision-based planning implementation details
-- **`ACTION_LIBRARY_README.md`**: Action recording and management guide
-
 ## Key Concepts
 
 ### Strategy Selection Logic
