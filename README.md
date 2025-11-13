@@ -498,12 +498,3 @@ Contributions welcome! Areas for improvement:
 - Performance optimization for faster planning
 - Finetune GR00t with more dataset tasks. Use it as action generator (i.e., populate the action library)
 
-## Support
-
-For questions or issues:
-1. Review troubleshooting section above
-2. Open an issue on GitHub with:
-   - Error message or unexpected behavior
-   - Steps to reproduce
-   - Environment details (conda env, GPU, Isaac Sim version)
-
